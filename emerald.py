@@ -35,6 +35,7 @@ commands = {
 "cd":cd,
 "cd ..":cd_parentdir,
 "pwd":pwd,
+"mkdir":mushroomlib.mkdir,
 "m":mushroomlib.loadmod,
 "loadmod":mushroomlib.loadmod,
 "exit":exit,
