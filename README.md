@@ -10,8 +10,9 @@
 - Replace "import mushroomlib" with "import lib.mushroomlib as mushroomlib"
 3. Modify /etc/systemrun
 - Paste this text into /etc/systemrun
-"
+
 import bin.emerald as emerald
+<br>
 emerald.console()
-"
+
 4. Done!
