@@ -37,6 +37,7 @@ commands = {
 "pwd":pwd,
 "m":mushroomlib.loadmod,
 "loadmod":mushroomlib.loadmod,
+"exit":exit,
 }
 
 
