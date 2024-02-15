@@ -2,7 +2,7 @@
 
 # Installation guide
 
-## Monaco
+## Monaco/NACO
 1. Copy emerald files to the system
 - Copy emerald.py to /usr/bin
 - Copy mushroomlib.py to /usr/lib
