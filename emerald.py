@@ -32,23 +32,25 @@ def pwd():
 
 
 def checkos():
-    global working_directory
     try:
         with open("etc/kernelver") as file:
             return "NACO"
     except IOError:
-        return "Monaco"
+        try:
+          with open("etc/monacover") as monacofile:
+            return "Monaco"
+        except IOError:
+          return "Other"
 
 def sysinfo():
-    global working_directory
     os = checkos()
     osver = ""
     term = ""
     if (os == "NACO"):
         try:
-            import lib.sysinfo as sysinfo
-            osver = sysinfo.sysver()
-            term = sysinfo.term()
+            import lib.sysinfo as _sysinfo
+            osver = _sysinfo.sysver()
+            term = _sysinfo.term()
             print("""
           ((((((         ((((((         
           ((((((((       ((((((         
@@ -67,7 +69,7 @@ def sysinfo():
           ((((((      (((((((((         
           ((((((       ((((((((                    
                   """)
-            print("OS:" + os)
+            print("OS: " + os)
             print("Version: " + osver)
             print("Terminal: " + term)
         finally:
@@ -91,7 +93,9 @@ def sysinfo():
                                         
                                         
               """)
-        print("OS:" + os)
+        print("OS: " + os)
+    else:
+      print("OS: " + os)
 commands = {
 "ls":ls,
 "cd":cd,
