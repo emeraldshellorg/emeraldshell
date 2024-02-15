@@ -39,6 +39,23 @@ def checkos():
     except IOError:
         return "Monaco"
 
+def sysinfo():
+    global working_directory
+    os = checkos()
+    osver = ""
+    term = ""
+    if (os == "NACO"):
+        try:
+            import lib.sysinfo as sysinfo
+            osver = sysinfo.sysver()
+            term = sysinfo.term()
+            print(os)
+            print("Version: " + osver)
+            print("Terminal: " + term)
+        finally:
+            pass
+    elif (os == "Monaco"):
+        print(os)
 commands = {
 "ls":ls,
 "cd":cd,
@@ -48,6 +65,7 @@ commands = {
 "clear":mushroomlib.clear,
 "cat":mushroomlib.vf,
 "m":mushroomlib.loadmod,
+"uname":sysinfo,
 "loadmod":mushroomlib.loadmod,
 "exit":exit,
 }
