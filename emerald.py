@@ -34,7 +34,7 @@ def pwd():
 def checkos():
     global working_directory
     try:
-        with open("etc/sysver") as file:
+        with open("etc/kernelver") as file:
             return "NACO"
     except IOError:
         return "Monaco"
