@@ -13,7 +13,7 @@ def ls():
         print(i)
 
 def cd():
-    global workiong_directory
+    global working_directory
     pathdir = input("Path: ")
     fullpath = working_directory + "/" + pathdir
     isdir = os.path.isdir(fullpath)
