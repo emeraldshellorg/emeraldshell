@@ -126,6 +126,7 @@ def console():
                              
     """)
     print("Welcome to EMERALD Shell")
+    working_directory = os.getcwd()
     while isRunning:
         command = input(working_directory+" $ ")
         if command in commands:
